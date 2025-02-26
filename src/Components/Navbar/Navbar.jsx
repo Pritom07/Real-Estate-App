@@ -3,6 +3,7 @@ import { ImHome } from "react-icons/im";
 import { MdRealEstateAgent } from "react-icons/md";
 import { MdOutlineBrowserUpdated } from "react-icons/md";
 import { MdOutlineLogin } from "react-icons/md";
+import "animate.css";
 
 const Navbar = () => {
   const navlinks = (

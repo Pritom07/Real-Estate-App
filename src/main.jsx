@@ -15,7 +15,11 @@ import UpdateProfile from "./Layouts/UpdateProfile/UpdateProfile";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Homelayouts></Homelayouts>}>
-      <Route index element={<Home></Home>}></Route>
+      <Route
+        index
+        element={<Home></Home>}
+        loader={() => fetch("Data/data.json")}
+      ></Route>
       <Route path="/allEstates" element={<Allestates></Allestates>}></Route>,
       <Route
         path="/updateProfile"

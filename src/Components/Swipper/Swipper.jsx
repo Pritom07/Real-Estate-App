@@ -26,21 +26,20 @@ const Swipper = () => {
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       speed={2400}
-      className="h-[500px]"
+      className="h-[550px]"
       onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
     >
       <SwiperSlide className="relative">
         <img
           src="Images/slider1.jpg"
-          className="h-[500px] w-full object-cover"
+          className="min-h-screen w-full object-cover"
         />
         {activeIndex === 0 && (
           <motion.div
-            key="slide-1"
-            className="absolute top-60 left-32 transform -translate-y-1/2 text-5xl text-white drop-shadow-2xl font-bold"
-            initial={{ y: -500, opacity: 0 }}
+            className="absolute top-[280px] left-32 transform -translate-y-1/2 text-[50px] text-white drop-shadow-2xl font-bold"
+            initial={{ y: -800, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 2.0, ease: "easeOut" }}
+            transition={{ duration: 2.2, ease: "easeOut" }}
           >
             Experience Elegance Beyond Imagination <br />
             Discover Your Dream Luxury Home Today!
@@ -51,13 +50,12 @@ const Swipper = () => {
       <SwiperSlide className="relative">
         <img
           src="Images/slider2.jpg"
-          className="h-[500px] w-full object-cover"
+          className="min-h-screen w-full object-cover"
         />
         {activeIndex === 1 && (
           <motion.div
-            key="slide-2"
-            className="absolute top-60 left-36 transform -translate-y-1/2 text-5xl text-white drop-shadow-2xl font-bold"
-            initial={{ x: -500, opacity: 0 }}
+            className="absolute top-[275px] left-40 transform -translate-y-1/2 text-[50px] text-white drop-shadow-2xl font-bold"
+            initial={{ x: -600, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 2.0, ease: "easeOut" }}
           >
@@ -70,12 +68,11 @@ const Swipper = () => {
       <SwiperSlide className="relative">
         <img
           src="Images/slider3.jpg"
-          className="h-[500px] w-full object-cover"
+          className="min-h-screen w-full object-cover"
         />
         {activeIndex === 2 && (
           <motion.div
-            key="slide-3"
-            className="absolute top-60 left-36 transform -translate-y-1/2 text-5xl text-white drop-shadow-2xl font-bold"
+            className="absolute top-[280px] left-36 transform -translate-y-1/2 text-[50px] text-white drop-shadow-2xl font-bold"
             initial={{ y: 400, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 2.1, ease: "easeOut" }}

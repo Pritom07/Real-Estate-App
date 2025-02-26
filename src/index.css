@@ -1,11 +1,15 @@
 /* Google font Italianno */
 @import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
 
+/* Google font Dancing Script */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
 @import "tailwindcss";
 @plugin "daisyui";
 
 @theme {
   --font-italianno: "Italianno", serif;
+  --font-dancingScript: "Dancing Script", serif;
 }
 
 a.active {
