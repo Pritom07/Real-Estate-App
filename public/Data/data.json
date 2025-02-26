@@ -1,0 +1,288 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Oceanfront Penthouse",
+    "segment_name": "Luxury",
+    "description": "A luxurious penthouse offering panoramic ocean views, private elevator access, and expansive terraces with a private infinity pool. Experience the height of modern living with a fully-equipped kitchen, state-of-the-art entertainment systems, and custom-designed interiors.",
+    "price": 12000000,
+    "status": "sale",
+    "area": "3500 sq ft",
+    "location": "Malibu, California",
+    "facilities": [
+      "living room",
+      "private pool",
+      "modern kitchen",
+      "cinema room",
+      "terrace",
+      "elevator"
+    ],
+    "type": "Penthouse",
+    "image": "https://i.ibb.co.com/HDHDbyYp/Oceanfront-Penthouse.jpg"
+  },
+  {
+    "id": 2,
+    "estate_title": "Beachfront Resort",
+    "segment_name": "Luxury",
+    "description": "This world-class beachfront resort offers exclusive villas with private beach access, luxury spas, gourmet dining, and water sports facilities. Perfect for relaxation and indulgence, this resort is located in one of the most beautiful tropical destinations.",
+    "price": 15000000,
+    "status": "sale",
+    "area": "20000 sq ft",
+    "location": "Bahamas",
+    "facilities": [
+      "spa",
+      "private beach",
+      "water sports",
+      "gourmet dining",
+      "private villas"
+    ],
+    "type": "Resort",
+    "image": "https://i.ibb.co.com/5gxn3VSP/Beachfront-Resort.jpg"
+  },
+  {
+    "id": 3,
+    "estate_title": "Exclusive Private Island",
+    "segment_name": "Luxury",
+    "description": "Own your very own private island paradise, featuring pristine beaches, crystal-clear waters, and an ultra-modern villa. The island includes a private dock, helicopter pad, and expansive recreational spaces for water activities and relaxation.",
+    "price": 35000000,
+    "status": "sale",
+    "area": "100000 sq ft",
+    "location": "Maldives",
+    "facilities": [
+      "private beach",
+      "helicopter pad",
+      "dock",
+      "modern villa",
+      "outdoor lounge"
+    ],
+    "type": "Private Island",
+    "image": "https://i.ibb.co.com/Csmr5ymv/Exclusive-Private-Island.jpg"
+  },
+  {
+    "id": 4,
+    "estate_title": "Villa on the Cliffs",
+    "segment_name": "Luxury",
+    "description": "Perched on the cliffs of Santorini, this villa offers dramatic views of the Aegean Sea. The home boasts minimalist design, large open terraces, a private pool, and an expansive garden with pathways leading to the edge of the cliffs.",
+    "price": 9000000,
+    "status": "sale",
+    "area": "4500 sq ft",
+    "location": "Santorini, Greece",
+    "facilities": [
+      "living room",
+      "private pool",
+      "garden",
+      "outdoor dining",
+      "terraces"
+    ],
+    "type": "Villa",
+    "image": "https://i.ibb.co.com/60Wb65Nr/Villa-on-the-Cliffs.jpg"
+  },
+  {
+    "id": 5,
+    "estate_title": "Luxury Mountain Mansion",
+    "segment_name": "Luxury",
+    "description": "A majestic mansion located in the Swiss Alps, offering a combination of rustic charm and modern luxury. It features a grand living room with vaulted ceilings, a fully equipped kitchen, an indoor pool, and a private ski lift access.",
+    "price": 20000000,
+    "status": "sale",
+    "area": "12000 sq ft",
+    "location": "Swiss Alps, Switzerland",
+    "facilities": [
+      "living room",
+      "indoor pool",
+      "private ski lift",
+      "sauna",
+      "library"
+    ],
+    "type": "Mansion",
+    "image": "https://i.ibb.co.com/N2J5F5Py/Mountain-Mansion.jpg"
+  },
+  {
+    "id": 6,
+    "estate_title": "Luxury Beachfront Villa",
+    "segment_name": "Luxury",
+    "description": "A stunning beachfront villa located in the heart of the Caribbean, offering open-plan living with a seamless connection to the outdoors. Enjoy 180-degree views of the ocean, private infinity pools, and a full staff to attend to your needs.",
+    "price": 8500000,
+    "status": "sale",
+    "area": "6000 sq ft",
+    "location": "Caribbean",
+    "facilities": [
+      "living room",
+      "infinity pool",
+      "outdoor terrace",
+      "private beach",
+      "staff quarters"
+    ],
+    "type": "Villa",
+    "image": "https://i.ibb.co.com/Xr9vwgPK/Beachfront-Villa.jpg"
+  },
+  {
+    "id": 7,
+    "estate_title": "Oceanview Penthouse Suite",
+    "segment_name": "Luxury",
+    "description": "An exclusive penthouse offering unobstructed views of the ocean, with luxurious interiors, a private rooftop terrace, and a personal infinity pool. This modern architectural gem includes a home theater, spa, and a fully equipped kitchen with top-tier appliances.",
+    "price": 6000000,
+    "status": "sale",
+    "area": "4000 sq ft",
+    "location": "Dubai, UAE",
+    "facilities": [
+      "rooftop terrace",
+      "infinity pool",
+      "home theater",
+      "spa",
+      "modern kitchen"
+    ],
+    "type": "Penthouse",
+    "image": "https://i.ibb.co.com/8ncQ77kN/Oceanview-Penthouse-Suite.jpg"
+  },
+  {
+    "id": 8,
+    "estate_title": "Luxury Island Retreat",
+    "segment_name": "Luxury",
+    "description": "This luxury retreat is located on a private island and is accessible only by yacht or private plane. It offers two stunning villas, a beach club, tennis courts, and a wellness center. Perfect for those seeking exclusivity and tranquility.",
+    "price": 24000000,
+    "status": "sale",
+    "area": "15000 sq ft",
+    "location": "Fiji Islands",
+    "facilities": [
+      "private beach",
+      "wellness center",
+      "tennis court",
+      "beach club",
+      "private villas"
+    ],
+    "type": "Private Island",
+    "image": "https://i.ibb.co.com/SDdWXtM1/Luxury-Island-Retreat.jpg"
+  },
+  {
+    "id": 9,
+    "estate_title": "Luxury Urban Penthouse",
+    "segment_name": "Luxury",
+    "description": "An urban penthouse located in a prime city center offering unmatched views of the skyline. Features include smart home technology, a rooftop garden, a home gym, and a grand living space with floor-to-ceiling windows.",
+    "price": 7000000,
+    "status": "sale",
+    "area": "3200 sq ft",
+    "location": "New York, USA",
+    "facilities": [
+      "rooftop garden",
+      "smart home",
+      "home gym",
+      "living room",
+      "dining area"
+    ],
+    "type": "Penthouse",
+    "image": "https://i.ibb.co.com/5Wd5Lzrc/Urban-Penthouse.jpg"
+  },
+  {
+    "id": 10,
+    "estate_title": "Majestic Resort Villa",
+    "segment_name": "Luxury",
+    "description": "Nestled in a tropical paradise, this resort villa offers panoramic views of the rainforest. With a private swimming pool, hot tub, and a personal chef, it promises a lavish vacation experience for those who want to escape the ordinary.",
+    "price": 9500000,
+    "status": "rent",
+    "area": "4500 sq ft",
+    "location": "Bali, Indonesia",
+    "facilities": [
+      "private pool",
+      "hot tub",
+      "personal chef",
+      "rainforest view",
+      "spa"
+    ],
+    "type": "Villa",
+    "image": "https://i.ibb.co.com/GvWwfSHb/Majestic-Resort-Villa.jpg"
+  },
+  {
+    "id": 11,
+    "estate_title": "Ocean View Mansion",
+    "segment_name": "Luxury",
+    "description": "Located along the coastline of Malibu, this mansion offers sweeping ocean views, a large infinity pool, private beach access, and luxurious interiors. Perfect for hosting lavish events or simply relaxing in ultimate privacy.",
+    "price": 18000000,
+    "status": "sale",
+    "area": "10000 sq ft",
+    "location": "Malibu, California",
+    "facilities": [
+      "infinity pool",
+      "private beach",
+      "living room",
+      "outdoor dining area",
+      "spa"
+    ],
+    "type": "Mansion",
+    "image": "https://i.ibb.co.com/M5N9cjYJ/Ocean-View-Mansion.jpg"
+  },
+  {
+    "id": 12,
+    "estate_title": "Beachfront Mansion",
+    "segment_name": "Luxury",
+    "description": "Located on the pristine beaches of the Caribbean, this mansion features luxurious living spaces with large windows that overlook the ocean. It includes a grand ballroom, a personal movie theater, and a wine cellar.",
+    "price": 22000000,
+    "status": "sale",
+    "area": "12000 sq ft",
+    "location": "Caribbean",
+    "facilities": [
+      "living room",
+      "grand ballroom",
+      "movie theater",
+      "wine cellar",
+      "private beach"
+    ],
+    "type": "Mansion",
+    "image": "https://i.ibb.co.com/gLKDqK4k/Beachfront-Mansion.jpg"
+  },
+  {
+    "id": 13,
+    "estate_title": "Mountain Chalet Mansion",
+    "segment_name": "Luxury",
+    "description": "A stunning mansion located in Aspen, Colorado, with breathtaking mountain views. This mansion features ski-in access, a grand fireplace, and an expansive terrace with hot tubs and a barbecue area.",
+    "price": 16000000,
+    "status": "sale",
+    "area": "8500 sq ft",
+    "location": "Aspen, Colorado",
+    "facilities": [
+      "living room",
+      "outdoor hot tub",
+      "barbecue area",
+      "ski-in access",
+      "fireplace"
+    ],
+    "type": "Mansion",
+    "image": "https://i.ibb.co.com/0R728mhf/Mountain-Chalet-Mansion.jpg"
+  },
+  {
+    "id": 14,
+    "estate_title": "Luxury Penthouse with City Views",
+    "segment_name": "Luxury",
+    "description": "This penthouse offers 360-degree views of the city skyline, with an expansive living area and a private rooftop terrace. The penthouse includes a home theater, modern kitchen, and an open-plan design perfect for entertaining.",
+    "price": 11000000,
+    "status": "sale",
+    "area": "3000 sq ft",
+    "location": "Tokyo, Japan",
+    "facilities": [
+      "private rooftop terrace",
+      "home theater",
+      "living room",
+      "modern kitchen",
+      "city view"
+    ],
+    "type": "Penthouse",
+    "image": "https://i.ibb.co.com/4wSrq0QV/Penthouse-with-City-Views.jpg"
+  },
+  {
+    "id": 15,
+    "estate_title": "Exclusive Coastal Villa",
+    "segment_name": "Luxury",
+    "description": "A coastal villa located in the French Riviera offering exquisite views of the Mediterranean Sea. The villa features elegant gardens, a private pool, and multiple outdoor terraces with panoramic ocean views.",
+    "price": 14500000,
+    "status": "sale",
+    "area": "8000 sq ft",
+    "location": "French Riviera, France",
+    "facilities": [
+      "private pool",
+      "gardens",
+      "outdoor terraces",
+      "living room",
+      "sea view"
+    ],
+    "type": "Villa",
+    "image": "https://i.ibb.co.com/4nmrTHhQ/Exclusive-Coastal-Villa.jpg"
+  }
+]

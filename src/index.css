@@ -1,0 +1,13 @@
+/* Google font Italianno */
+@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --font-italianno: "Italianno", serif;
+}
+
+a.active {
+  color: #6d28d9;
+}
