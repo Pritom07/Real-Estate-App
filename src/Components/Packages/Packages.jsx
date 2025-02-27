@@ -1,365 +1,176 @@
+import { MdRadioButtonChecked } from "react-icons/md";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 const Packages = () => {
+  useEffect(() => {
+    AOS.init({ duration: 400 });
+  }, []);
   return (
     <div className="max-w-7xl mx-auto">
       <section className="flex">
-        <div className="card w-96 bg-base-100 border-2 border-slate-200 mx-5 mt-8">
+        <div
+          data-aos="fade-right"
+          className="card w-96 h-[360px] bg-violet-400 border-2 border-slate-200 mx-4 mt-12 hover:scale-y-105 cursor-pointer"
+        >
           <div className="card-body">
-            <span className="badge badge-xs badge-warning">Most Popular</span>
-            <div className="flex justify-between">
-              <h2 className="text-3xl font-bold">Premium</h2>
-              <span className="text-xl">$29/mo</span>
+            <span className="badge badge-sm font-bold badge-accent">
+              Recomended
+            </span>
+            <h1 className="text-2xl font-bold">Platinum Paradise Package</h1>
+            <div className="flex justify-between mt-1.5">
+              <h2 className="text-xl font-bold">Regular</h2>
+              <span className="text-xl text-white font-medium">$5 Million</span>
             </div>
-            <ul className="mt-6 flex flex-col gap-2 text-xs">
+            <ul className="mt-4 flex flex-col gap-2">
               <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-success"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>High-resolution image generation</span>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  Exclusive Oceanfront View
+                </span>
               </li>
               <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-success"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>Customizable style templates</span>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  Infinity Pool & Jacuzz
+                </span>
               </li>
               <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-success"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>Batch processing capabilities</span>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  Smart Home Automation for lighting
+                </span>
               </li>
               <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-success"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>AI-driven image enhancements</span>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  Private Home Cinema
+                </span>
               </li>
-              <li className="opacity-50">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-base-content/50"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span className="line-through">Seamless cloud integration</span>
-              </li>
-              <li className="opacity-50">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-base-content/50"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span className="line-through">
-                  Real-time collaboration tools
+              <li>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  24/7 Concierge & Security Services
                 </span>
               </li>
             </ul>
-            <div className="mt-6">
-              <button className="btn btn-primary btn-block">Subscribe</button>
-            </div>
           </div>
         </div>
 
-        {/* 2nd one */}
+        {/* 2nd package */}
 
-        <div className="card w-96 bg-base-100 border-2 border-slate-200">
+        <div
+          data-aos="fade-up"
+          className="card w-96 h-[450px] bg-pink-400 border-2 border-slate-200 hover:scale-y-105 cursor-pointer"
+        >
           <div className="card-body">
-            <span className="badge badge-xs badge-warning">Most Popular</span>
-            <div className="flex justify-between">
-              <h2 className="text-3xl font-bold">Premium</h2>
-              <span className="text-xl">$29/mo</span>
+            <span className="badge badge-sm font-bold badge-warning">
+              Royal VIP
+            </span>
+            <h1 className="text-2xl font-bold"> Royal Grandeur Package</h1>
+            <div className="flex justify-between mt-1.5">
+              <h2 className="text-xl font-bold">Royal</h2>
+              <span className="text-xl text-white font-medium">
+                $20 Million
+              </span>
             </div>
-            <ul className="mt-6 flex flex-col gap-2 text-xs">
+            <ul className="mt-4 flex flex-col gap-2">
               <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-success"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>High-resolution image generation</span>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  Expansive Estate Grounds
+                </span>
               </li>
               <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-success"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>Customizable style templates</span>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  Helipad & Luxury Car Garage
+                </span>
               </li>
               <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-success"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>Batch processing capabilities</span>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  Wine Cellar & Tasting Room
+                </span>
               </li>
               <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-success"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>AI-driven image enhancements</span>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  Home Office Suite & Library
+                </span>
               </li>
-              <li className="opacity-50">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-base-content/50"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span className="line-through">Seamless cloud integration</span>
+              <li>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  VIP Entertainment Area
+                </span>
               </li>
-              <li className="opacity-50">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-base-content/50"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span className="line-through">
-                  Real-time collaboration tools
+              <li>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  Personal Gym & Fitness Studio
+                </span>
+              </li>
+              <li>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  Indoor & Outdoor Swimming Pools
                 </span>
               </li>
             </ul>
-            <div className="mt-6">
-              <button className="btn btn-primary btn-block">Subscribe</button>
-            </div>
           </div>
         </div>
 
-        {/* 3rd one */}
+        {/* 3rd package */}
 
-        <div className="card w-96 bg-base-100 border-2 border-slate-200 mx-5 mt-8">
+        <div
+          data-aos="fade-left"
+          className="card w-96 h-[360px] bg-violet-400 border-2 border-slate-200 mx-4 mt-12 hover:scale-y-105 cursor-pointer"
+        >
           <div className="card-body">
-            <span className="badge badge-xs badge-warning">Most Popular</span>
-            <div className="flex justify-between">
-              <h2 className="text-3xl font-bold">Premium</h2>
-              <span className="text-xl">$29/mo</span>
+            <span className="badge badge-sm font-bold badge-accent">
+              Luxuries
+            </span>
+            <h1 className="text-2xl font-bold">Diamond Elite Package</h1>
+            <div className="flex justify-between mt-1.5">
+              <h2 className="text-xl font-bold">Regular</h2>
+              <span className="text-xl text-white font-medium">
+                $10 Million
+              </span>
             </div>
-            <ul className="mt-6 flex flex-col gap-2 text-xs">
+            <ul className="mt-4 flex flex-col gap-2">
               <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-success"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>High-resolution image generation</span>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  Panoramic City & Ocean Views
+                </span>
               </li>
               <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-success"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>Customizable style templates</span>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  Personalized Interior Design
+                </span>
               </li>
               <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-success"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>Batch processing capabilities</span>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  Private Elevator Access
+                </span>
               </li>
               <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-success"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>AI-driven image enhancements</span>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  Gourmet Chef's Kitchen
+                </span>
               </li>
-              <li className="opacity-50">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-base-content/50"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span className="line-through">Seamless cloud integration</span>
-              </li>
-              <li className="opacity-50">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 me-2 inline-block text-base-content/50"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span className="line-through">
-                  Real-time collaboration tools
+              <li>
+                <MdRadioButtonChecked className="inline mr-1 text-white text-xl"></MdRadioButtonChecked>
+                <span className="font-semibold text-[16px]">
+                  Exclusive Access to Golf Course & Spa
                 </span>
               </li>
             </ul>
-            <div className="mt-6">
-              <button className="btn btn-primary btn-block">Subscribe</button>
-            </div>
           </div>
         </div>
       </section>

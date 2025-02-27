@@ -53,7 +53,7 @@ const HomepageEstates = ({ estate }) => {
             <div className="mt-2">
               <IoMdStar className="inline text-[22px] text-[#FFD700]" />
               <span className="ml-1 font-semibold">
-                Ratings :{" "}
+                Ratings :
                 <span className="text-slate-600 font-dancingScript font-bold">
                   {ratings}
                 </span>

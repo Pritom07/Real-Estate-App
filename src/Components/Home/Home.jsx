@@ -12,7 +12,7 @@ const Home = () => {
   const slicedData = data.slice(0, 6);
 
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 800 });
   }, []);
 
   return (
@@ -32,19 +32,32 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="flex justify-center items-center mt-6">
+      <div className="flex justify-center items-center mt-7">
         <button className=" bg-violet-500 text-white font-semibold px-3 py-2 rounded-[5px] hover:scale-x-105 cursor-pointer">
           View All Estates
           <FaArrowRightLong className="inline ml-1" />
         </button>
       </div>
       <section className="mt-8">
-        <h1 className="text-4xl font-semibold text-center">Our Packages</h1>
-        <p className="text-center text-slate-500 mt-1 font-medium">
+        <h1
+          data-aos="zoom-in-up"
+          className="text-4xl font-semibold text-center"
+        >
+          Our Packages for Respected Customers
+        </h1>
+        <p
+          data-aos="zoom-in-up"
+          className="text-center text-slate-500 mt-1 font-medium"
+        >
           Choose one of our premium package that suits you the best
         </p>
         <div className="flex items-center mt-7">
           <Packages></Packages>
+        </div>
+        <div className="mt-8">
+          <p className="text-4xl font-semibold text-center">
+            We Value Your Trust
+          </p>
         </div>
       </section>
     </div>
