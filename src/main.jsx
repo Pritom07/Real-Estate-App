@@ -20,7 +20,12 @@ const router = createBrowserRouter(
         element={<Home></Home>}
         loader={() => fetch("Data/data.json")}
       ></Route>
-      <Route path="/allEstates" element={<Allestates></Allestates>}></Route>,
+      <Route
+        path="/allEstates"
+        element={<Allestates></Allestates>}
+        loader={() => fetch("Data/data.json")}
+      ></Route>
+      ,
       <Route
         path="/updateProfile"
         element={<UpdateProfile></UpdateProfile>}

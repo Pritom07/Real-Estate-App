@@ -26,17 +26,19 @@ const Swipper = () => {
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       speed={2400}
-      className="h-[550px]"
+      className="h-[560px] overflow-x-hidden"
       onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
     >
       <SwiperSlide className="relative">
         <img
           src="Images/slider1.jpg"
-          className="min-h-screen w-full object-cover"
+          className="h-full w-full object-cover"
+          alt="Luxury Home"
         />
         {activeIndex === 0 && (
           <motion.div
-            className="absolute top-[280px] left-32 transform -translate-y-1/2 text-[50px] text-white drop-shadow-2xl font-bold"
+            className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white drop-shadow-2xl font-bold 
+              text-[24px] sm:text-[30px] md:text-[40px] lg:text-[50px] xl:text-[60px] px-4"
             initial={{ y: -800, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 2.2, ease: "easeOut" }}
@@ -50,11 +52,13 @@ const Swipper = () => {
       <SwiperSlide className="relative">
         <img
           src="Images/slider2.jpg"
-          className="min-h-screen w-full object-cover"
+          className="h-full w-full object-cover"
+          alt="Luxury Living Room"
         />
         {activeIndex === 1 && (
           <motion.div
-            className="absolute top-[275px] left-40 transform -translate-y-1/2 text-[50px] text-white drop-shadow-2xl font-bold"
+            className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white drop-shadow-2xl font-bold 
+              text-[24px] sm:text-[30px] md:text-[40px] lg:text-[50px] xl:text-[60px] px-4"
             initial={{ x: -600, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 2.0, ease: "easeOut" }}
@@ -68,11 +72,13 @@ const Swipper = () => {
       <SwiperSlide className="relative">
         <img
           src="Images/slider3.jpg"
-          className="min-h-screen w-full object-cover"
+          className="h-full w-full object-cover"
+          alt="Luxury Interior"
         />
         {activeIndex === 2 && (
           <motion.div
-            className="absolute top-[280px] left-36 transform -translate-y-1/2 text-[50px] text-white drop-shadow-2xl font-bold"
+            className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white drop-shadow-2xl font-bold 
+              text-[24px] sm:text-[30px] md:text-[40px] lg:text-[50px] xl:text-[60px] px-4"
             initial={{ y: 400, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 2.1, ease: "easeOut" }}

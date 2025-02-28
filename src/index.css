@@ -12,6 +12,15 @@
   --font-dancingScript: "Dancing Script", serif;
 }
 
+body,
+html {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+}
+
 a.active {
   color: #6d28d9;
 }
