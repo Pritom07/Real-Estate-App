@@ -26,7 +26,7 @@ const Swipper = () => {
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       speed={2400}
-      className="h-[560px] overflow-x-hidden"
+      className="relative z-[1] h-[560px] overflow-x-hidden"
       onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
     >
       <SwiperSlide className="relative">

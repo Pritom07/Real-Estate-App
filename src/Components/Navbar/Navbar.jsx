@@ -3,9 +3,16 @@ import { ImHome } from "react-icons/im";
 import { MdRealEstateAgent } from "react-icons/md";
 import { MdOutlineBrowserUpdated } from "react-icons/md";
 import { MdOutlineLogin } from "react-icons/md";
+import { useState } from "react";
 import "animate.css";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   const navlinks = (
     <>
       <li>
@@ -25,35 +32,40 @@ const Navbar = () => {
       </li>
     </>
   );
+
   return (
-    <div>
+    <div className="relative z-[999]">
       <div className="navbar bg-base-100 overflow-x-hidden">
         <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+          <button
+            onClick={toggleMenu}
+            className="btn btn-ghost lg:hidden"
+            aria-expanded={isOpen}
+            aria-label="Toggle navigation"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              {navlinks}
-            </ul>
-          </div>
-          <a className="btn btn-ghost text-4xl font-italianno text-violet-700">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </button>
+          <ul
+            className={`menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow transition-all duration-1000 absolute ${
+              isOpen ? "top-[60px] left-6" : "-top-32 left-6"
+            }`}
+          >
+            {navlinks}
+          </ul>
+          <a className="btn btn-ghost text-4xl font-italianno text-violet-700 animate__animated animate__pulse">
             Real Estate
           </a>
         </div>

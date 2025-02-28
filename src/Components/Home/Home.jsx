@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Packages from "../Packages/Packages";
 import Timeline from "../Timeline/Timeline";
-import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router";
 
 const Home = () => {
@@ -25,7 +24,9 @@ const Home = () => {
 
   return (
     <div className="max-w-7xl mx-auto overflow-x-hidden px-4">
-      <Swipper></Swipper>
+      <div className="relative z-0">
+        <Swipper></Swipper>
+      </div>
 
       <section className="mt-6">
         <h1
@@ -79,19 +80,23 @@ const Home = () => {
           <Packages></Packages>
         </div>
 
-        <p
+        <h1
           data-aos="flip-right"
           className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center mt-8"
         >
           We Value Your Trust
+        </h1>
+        <p
+          data-aos="flip-right"
+          className="text-center text-slate-500 mt-1 font-medium"
+        >
+          Stay connected with us
         </p>
 
         <div className="mt-7">
           <Timeline></Timeline>
         </div>
       </section>
-
-      <Footer></Footer>
     </div>
   );
 };

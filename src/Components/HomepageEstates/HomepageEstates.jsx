@@ -4,19 +4,8 @@ import PropTypes from "prop-types";
 
 const HomepageEstates = ({ estate }) => {
   const [sale, Setsale] = useState(false);
-  const {
-    id,
-    image,
-    estate_title,
-    description,
-    price,
-    status,
-    area,
-    location,
-    facilities,
-    type,
-    ratings,
-  } = estate;
+  const { id, image, estate_title, description, status, type, ratings } =
+    estate;
 
   useEffect(() => {
     if (status === "Sale") {
@@ -57,7 +46,7 @@ const HomepageEstates = ({ estate }) => {
             <div className="flex items-center">
               <IoMdStar className="text-[20px] sm:text-[22px] text-[#FFD700]" />
               <span className="ml-1 font-semibold">
-                Ratings:{" "}
+                Ratings:
                 <span className="text-slate-600 font-dancingScript font-bold">
                   {ratings}
                 </span>
