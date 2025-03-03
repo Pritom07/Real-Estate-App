@@ -35,7 +35,7 @@ const Navbar = () => {
 
   return (
     <div className="relative z-[999]">
-      <div className="navbar bg-base-100 overflow-x-hidden">
+      <div className="navbar overflow-x-hidden">
         <div className="navbar-start">
           <button
             onClick={toggleMenu}
@@ -74,7 +74,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <Link
-            to="/signIn"
+            to="/auth/signIn"
             className="btn bg-violet-700 text-white font-semibold hover:scale-105"
           >
             <MdOutlineLogin></MdOutlineLogin>
