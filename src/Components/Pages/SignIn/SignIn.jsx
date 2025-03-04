@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
@@ -6,8 +6,15 @@ import { FaGithub } from "react-icons/fa6";
 import { Link } from "react-router";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { ThemeContext } from "../../Provider/Provider";
+import { toast } from "react-toastify";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 const SignIn = () => {
+  const { signInAccount, passwordReset, googleSignin, githubSignin } =
+    useContext(ThemeContext);
+  const emailRef = useRef();
+
   const [seePass, SetseePass] = useState(false);
   const handlePassShowing = () => {
     SetseePass(!seePass);
@@ -18,6 +25,54 @@ const SignIn = () => {
     const dataForm = new FormData(e.target);
     const email = dataForm.get("email");
     const password = dataForm.get("password");
+
+    signInAccount(email, password)
+      .then((userCredential) => {
+        if (!userCredential.user.emailVerified) {
+          toast.warn(
+            "Please verify your e-mail account. A message is sent in your e-mail"
+          );
+          return;
+        } else {
+          console.log(userCredential.user);
+        }
+      })
+      .catch((err) => {
+        toast.error(
+          `Please Ensure you are given correct E-mail and Password. ${err.message}`
+        );
+      });
+  };
+
+  const handleForgetPassword = () => {
+    const email = emailRef.current.value;
+    passwordReset(email)
+      .then(() => {
+        toast.info("Check your e-mail to reset password.");
+      })
+      .catch((err) => {
+        toast.error(`Enter your E-mail to reset Password. ${err.message}`);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    const GoogleProvider = new GoogleAuthProvider();
+    googleSignin(GoogleProvider)
+      .then((res) => {
+        console.log(res.user);
+      })
+      .catch((err) => {
+        toast.error(`${err.message}`);
+      });
+  };
+
+  const handleGithubLogin = () => {
+    const GithubProvider = new GithubAuthProvider();
+    githubSignin(GithubProvider)
+      .then(() => {})
+      .catch((err) => {
+        toast.error(`${err.message}`);
+      });
   };
 
   useEffect(() => {
@@ -27,7 +82,7 @@ const SignIn = () => {
   return (
     <div
       data-aos="zoom-in-up"
-      className="card w-full max-w-sm shrink-0 shadow-2xl backdrop-blur-xs"
+      className="card w-full max-w-sm shrink-0 shadow-2xl backdrop-blur-xs relative z-[10]"
     >
       <div className="card-body flex flex-col w-full">
         <div>
@@ -41,6 +96,7 @@ const SignIn = () => {
                 className="input"
                 placeholder="Email"
                 name="email"
+                ref={emailRef}
                 required
               />
               <label className="fieldset-label font-semibold text-black text-[16px]">
@@ -62,7 +118,10 @@ const SignIn = () => {
               </div>
 
               <div className="-mt-3">
-                <a className="link link-hover font-semibold text-black text-[16px]">
+                <a
+                  onClick={handleForgetPassword}
+                  className="link link-hover font-semibold text-black text-[16px]"
+                >
                   Forgot password?
                 </a>
               </div>
@@ -74,11 +133,17 @@ const SignIn = () => {
         </div>
         <div className="divider font-semibold">OR</div>
         <div className="flex flex-col text-white">
-          <button className="bg-red-700 rounded-[6px] py-2.5 cursor-pointer hover:scale-x-105 duration-200">
+          <button
+            onClick={handleGoogleLogin}
+            className="bg-red-700 rounded-[6px] py-2.5 cursor-pointer hover:scale-x-105 duration-200"
+          >
             <FaGoogle className="inline mr-2"></FaGoogle>
             Login With Google
           </button>
-          <button className="bg-black rounded-[6px] py-2.5 mt-3 cursor-pointer hover:scale-x-105 duration-200">
+          <button
+            onClick={handleGithubLogin}
+            className="bg-black rounded-[6px] py-2.5 mt-3 cursor-pointer hover:scale-x-105 duration-200"
+          >
             <FaGithub className="inline mr-2 text-[18px]"></FaGithub>
             Login With Github
           </button>

@@ -1,13 +1,18 @@
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import { ImHome } from "react-icons/im";
 import { MdRealEstateAgent } from "react-icons/md";
 import { MdOutlineBrowserUpdated } from "react-icons/md";
 import { MdOutlineLogin } from "react-icons/md";
-import { useState } from "react";
+import { CiLogout } from "react-icons/ci";
+import { useContext, useState } from "react";
 import "animate.css";
+import { ThemeContext } from "../Provider/Provider";
 
 const Navbar = () => {
+  const { User, signOUT } = useContext(ThemeContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [hoverOnPhoto, setHoverOnPhoto] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -25,13 +30,25 @@ const Navbar = () => {
           <MdRealEstateAgent></MdRealEstateAgent> All Estates
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/updateProfile" className="text-[16px] font-semibold">
-          <MdOutlineBrowserUpdated></MdOutlineBrowserUpdated> Update Profile
-        </NavLink>
-      </li>
+      {User && (
+        <li>
+          <NavLink to="/updateProfile" className="text-[16px] font-semibold">
+            <MdOutlineBrowserUpdated></MdOutlineBrowserUpdated> Update Profile
+          </NavLink>
+        </li>
+      )}
     </>
   );
+
+  const handlesignOut = () => {
+    signOUT()
+      .then(() => {
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
   return (
     <div className="relative z-[999]">
@@ -59,12 +76,15 @@ const Navbar = () => {
             </svg>
           </button>
           <ul
-            className={`menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow transition-all duration-1000 absolute ${
-              isOpen ? "top-[60px] left-6" : "-top-32 left-6"
+            className={`menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow-lg transition-all duration-500 absolute z-[50] ${
+              isOpen
+                ? "top-[60px] left-6 opacity-100 visible"
+                : "-top-32 left-6 opacity-0 invisible"
             }`}
           >
             {navlinks}
           </ul>
+
           <a className="btn btn-ghost text-4xl font-italianno text-violet-700 animate__animated animate__pulse">
             Real Estate
           </a>
@@ -73,13 +93,38 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navlinks}</ul>
         </div>
         <div className="navbar-end">
-          <Link
-            to="/auth/signIn"
-            className="btn bg-violet-700 text-white font-semibold hover:scale-105"
-          >
-            <MdOutlineLogin></MdOutlineLogin>
-            SignIn
-          </Link>
+          {User ? (
+            <>
+              <button
+                onMouseEnter={() => setHoverOnPhoto(true)}
+                onMouseLeave={() => setHoverOnPhoto(false)}
+                className="mr-2"
+              >
+                {hoverOnPhoto ? (
+                  <p className="font-semibold text-[16px]">
+                    {User.displayName}
+                  </p>
+                ) : (
+                  <img src={User.photoURL} className="w-8 rounded-full" />
+                )}
+              </button>
+              <Link
+                onClick={handlesignOut}
+                className="btn bg-violet-700 text-white font-semibold hover:scale-105"
+              >
+                <CiLogout className="font-extrabold text-2xl"></CiLogout>
+                SignOut
+              </Link>
+            </>
+          ) : (
+            <Link
+              to="/auth/signIn"
+              className="btn bg-violet-700 text-white font-semibold hover:scale-105"
+            >
+              <MdOutlineLogin className="font-semibold text-2xl"></MdOutlineLogin>
+              SignIn
+            </Link>
+          )}
         </div>
       </div>
     </div>

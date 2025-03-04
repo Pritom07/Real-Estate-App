@@ -14,6 +14,8 @@ import UpdateProfile from "./Layouts/UpdateProfile/UpdateProfile";
 import Auth from "./Layouts/Auth/Auth";
 import SignIn from "./Components/Pages/SignIn/SignIn";
 import SignUp from "./Components/Pages/SignUp/SignUp";
+import Provider from "./Components/Provider/Provider";
+import { ToastContainer, Zoom } from "react-toastify";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -45,6 +47,14 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <Provider>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        theme="dark"
+        transition={Zoom}
+      />
+      <RouterProvider router={router}></RouterProvider>
+    </Provider>
   </StrictMode>
 );
