@@ -7,6 +7,8 @@ import { CiLogout } from "react-icons/ci";
 import { useContext, useState } from "react";
 import "animate.css";
 import { ThemeContext } from "../Provider/Provider";
+import { toast } from "react-toastify";
+import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const { User, signOUT } = useContext(ThemeContext);
@@ -46,7 +48,7 @@ const Navbar = () => {
         navigate("/");
       })
       .catch((err) => {
-        console.log(err.message);
+        toast.error(err.message);
       });
   };
 
@@ -98,14 +100,14 @@ const Navbar = () => {
               <button
                 onMouseEnter={() => setHoverOnPhoto(true)}
                 onMouseLeave={() => setHoverOnPhoto(false)}
-                className="mr-2 invisible md:visible"
+                className="mr-3 invisible md:visible"
               >
                 {hoverOnPhoto ? (
                   <p className="font-semibold text-[16px]">
                     {User.displayName}
                   </p>
                 ) : (
-                  <img src={User.photoURL} className="w-8 rounded-full" />
+                  <FaUserCircle className="text-4xl" />
                 )}
               </button>
               <Link

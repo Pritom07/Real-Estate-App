@@ -3,7 +3,7 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ThemeContext } from "../../Provider/Provider";
@@ -13,6 +13,9 @@ import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 const SignIn = () => {
   const { signInAccount, passwordReset, googleSignin, githubSignin } =
     useContext(ThemeContext);
+  const Location = useLocation();
+  const navigate = useNavigate();
+  console.log(Location);
   const emailRef = useRef();
 
   const [seePass, SetseePass] = useState(false);
@@ -34,7 +37,9 @@ const SignIn = () => {
           );
           return;
         } else {
-          console.log(userCredential.user);
+          {
+            Location?.state ? navigate(Location?.state) : navigate("/");
+          }
         }
       })
       .catch((err) => {
@@ -58,8 +63,10 @@ const SignIn = () => {
   const handleGoogleLogin = () => {
     const GoogleProvider = new GoogleAuthProvider();
     googleSignin(GoogleProvider)
-      .then((res) => {
-        console.log(res.user);
+      .then(() => {
+        {
+          Location?.state ? navigate(Location?.state) : navigate("/");
+        }
       })
       .catch((err) => {
         toast.error(`${err.message}`);
@@ -69,7 +76,11 @@ const SignIn = () => {
   const handleGithubLogin = () => {
     const GithubProvider = new GithubAuthProvider();
     githubSignin(GithubProvider)
-      .then(() => {})
+      .then(() => {
+        {
+          Location?.state ? navigate(Location?.state) : navigate("/");
+        }
+      })
       .catch((err) => {
         toast.error(`${err.message}`);
       });
@@ -93,31 +104,33 @@ const SignIn = () => {
               </label>
               <input
                 type="email"
-                className="input"
+                className="input focus:outline-none focus:ring-2 focus:ring-violet-500"
                 placeholder="Email"
                 name="email"
                 ref={emailRef}
                 required
               />
-              <label className="fieldset-label font-semibold text-black text-[16px]">
-                Password
-              </label>
-              <input
-                type={seePass ? "text" : "password"}
-                className="input"
-                placeholder="Password"
-                name="password"
-                required
-              />
 
-              <div
-                onClick={handlePassShowing}
-                className="text-[18px] cursor-pointer relative bottom-8 left-72"
-              >
-                {seePass ? <FaEyeSlash /> : <FaEye />}
+              <div className="relative w-full max-w-md">
+                <label className="fieldset-label font-semibold text-black text-[16px]">
+                  Password
+                </label>
+                <input
+                  type={seePass ? "text" : "password"}
+                  className="input w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-violet-500"
+                  placeholder="Password"
+                  name="password"
+                  required
+                />
+                <div
+                  onClick={handlePassShowing}
+                  className="absolute right-4 top-10 text-[18px] cursor-pointer text-gray-600 hover:text-black"
+                >
+                  {seePass ? <FaEyeSlash /> : <FaEye />}
+                </div>
               </div>
 
-              <div className="-mt-3">
+              <div className="mt-1">
                 <a
                   onClick={handleForgetPassword}
                   className="link link-hover font-semibold text-black text-[16px]"

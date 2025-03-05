@@ -17,6 +17,7 @@ import SignUp from "./Components/Pages/SignUp/SignUp";
 import Provider from "./Components/Provider/Provider";
 import EstateDetailinfo from "./Layouts/EstateDetailInfo/EstateDetailinfo";
 import { ToastContainer, Zoom } from "react-toastify";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -45,7 +46,11 @@ const router = createBrowserRouter(
       ,
       <Route
         path="/estateDetailInfo/:idx"
-        element={<EstateDetailinfo></EstateDetailinfo>}
+        element={
+          <PrivateRoute>
+            <EstateDetailinfo></EstateDetailinfo>
+          </PrivateRoute>
+        }
         loader={() => fetch("/Data/data.json")}
       ></Route>
     </>

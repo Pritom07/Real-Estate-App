@@ -80,7 +80,7 @@ const SignUp = () => {
               </label>
               <input
                 type="text"
-                className="input"
+                className="input focus:outline-none focus:ring-2 focus:ring-violet-500"
                 placeholder="Name"
                 name="name"
                 required
@@ -91,7 +91,7 @@ const SignUp = () => {
               </label>
               <input
                 type="text"
-                className="input"
+                className="input focus:outline-none focus:ring-2 focus:ring-violet-500"
                 placeholder="PhotoURL"
                 name="photo"
                 required
@@ -102,31 +102,31 @@ const SignUp = () => {
               </label>
               <input
                 type="email"
-                className="input"
+                className="input focus:outline-none focus:ring-2 focus:ring-violet-500"
                 placeholder="Email"
                 name="email"
                 required
               />
-              <label className="fieldset-label font-semibold text-black text-[16px]">
-                Password
-                <IoStarSharp className="text-red-700 inline ml-0.5 text-[12px]" />
-              </label>
-              <input
-                type={seePass ? "text" : "password"}
-                className="input"
-                placeholder="Password"
-                name="password"
-                required
-              />
-
-              <div
-                onClick={handlePassShowing}
-                className="text-[18px] cursor-pointer relative bottom-8 left-72"
-              >
-                {seePass ? <FaEyeSlash /> : <FaEye />}
+              <div className="relative w-full max-w-md">
+                <label className="fieldset-label font-semibold text-black text-[16px]">
+                  Password
+                </label>
+                <input
+                  type={seePass ? "text" : "password"}
+                  className="input w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-violet-500"
+                  placeholder="Password"
+                  name="password"
+                  required
+                />
+                <div
+                  onClick={handlePassShowing}
+                  className="absolute right-4 top-10 text-[18px] cursor-pointer text-gray-600 hover:text-black"
+                >
+                  {seePass ? <FaEyeSlash /> : <FaEye />}
+                </div>
               </div>
 
-              <button className="btn bg-violet-700 text-white border-2 border-violet-700 hover:scale-x-105 duration-200">
+              <button className="btn mt-4 bg-violet-700 text-white border-2 border-violet-700 hover:scale-x-105 duration-200">
                 SignUp
               </button>
             </fieldset>
