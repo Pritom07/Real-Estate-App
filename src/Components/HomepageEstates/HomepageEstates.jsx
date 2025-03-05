@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { IoMdStar } from "react-icons/io";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router";
 
 const HomepageEstates = ({ estate }) => {
   const [sale, Setsale] = useState(false);
   const { id, image, estate_title, description, status, type, ratings } =
     estate;
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (status === "Sale") {
@@ -14,6 +16,10 @@ const HomepageEstates = ({ estate }) => {
       Setsale(false);
     }
   }, [status]);
+
+  const viewEstateDetails = () => {
+    navigate(`/estateDetailInfo/${id}`);
+  };
 
   return (
     <div className="max-w-full cursor-pointer overflow-x-hidden">
@@ -53,6 +59,12 @@ const HomepageEstates = ({ estate }) => {
               </span>
             </div>
             <div className="font-semibold">{type}</div>
+            <button
+              onClick={viewEstateDetails}
+              className="bg-violet-700 text-white font-semibold px-3 py-2 rounded-[5px] cursor-pointer"
+            >
+              View Details
+            </button>
           </div>
         </div>
       </div>

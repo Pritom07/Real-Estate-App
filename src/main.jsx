@@ -15,6 +15,7 @@ import Auth from "./Layouts/Auth/Auth";
 import SignIn from "./Components/Pages/SignIn/SignIn";
 import SignUp from "./Components/Pages/SignUp/SignUp";
 import Provider from "./Components/Provider/Provider";
+import EstateDetailinfo from "./Layouts/EstateDetailInfo/EstateDetailinfo";
 import { ToastContainer, Zoom } from "react-toastify";
 
 const router = createBrowserRouter(
@@ -41,6 +42,12 @@ const router = createBrowserRouter(
         <Route path="/auth/signIn" element={<SignIn></SignIn>}></Route>
         <Route path="/auth/signUp" element={<SignUp></SignUp>}></Route>
       </Route>
+      ,
+      <Route
+        path="/estateDetailInfo/:idx"
+        element={<EstateDetailinfo></EstateDetailinfo>}
+        loader={() => fetch("/Data/data.json")}
+      ></Route>
     </>
   )
 );

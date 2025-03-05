@@ -98,7 +98,7 @@ const Navbar = () => {
               <button
                 onMouseEnter={() => setHoverOnPhoto(true)}
                 onMouseLeave={() => setHoverOnPhoto(false)}
-                className="mr-2"
+                className="mr-2 invisible md:visible"
               >
                 {hoverOnPhoto ? (
                   <p className="font-semibold text-[16px]">

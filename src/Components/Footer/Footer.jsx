@@ -2,7 +2,7 @@ import { RiCopyrightFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <div className="bg-black rounded-[4px] overflow-x-hidden">
+    <div className="bg-black rounded-[4px] overflow-x-hidden max-w-7xl mx-auto">
       <section className="flex flex-col items-center text-white py-6 font-semibold">
         <h1>
           <RiCopyrightFill className="inline mr-1.5 text-2xl" />

@@ -46,11 +46,7 @@ const Allestates = () => {
       </div>
       {nodata ? (
         <div className="flex justify-center items-center">
-          <img
-            src="Images/nodata.png"
-            className="h-[300px] md:h-[370px]"
-            alt="No Data"
-          />
+          <img src="Images/nodata.png" className="h-[300px] md:h-[370px]" />
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 mb-6">
