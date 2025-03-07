@@ -18,6 +18,7 @@ import Provider from "./Components/Provider/Provider";
 import EstateDetailinfo from "./Layouts/EstateDetailInfo/EstateDetailinfo";
 import { ToastContainer, Zoom } from "react-toastify";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import Favourities from "./Layouts/Favourities/Favourities";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -53,6 +54,12 @@ const router = createBrowserRouter(
         }
         loader={() => fetch("/Data/data.json")}
       ></Route>
+      ,
+      <Route
+        path="/favourities"
+        element={<Favourities></Favourities>}
+        loader={() => fetch("/Data/data.json")}
+      ></Route>
     </>
   )
 );
@@ -62,7 +69,7 @@ createRoot(document.getElementById("root")).render(
     <Provider>
       <ToastContainer
         position="top-center"
-        autoClose={5000}
+        autoClose={4000}
         theme="dark"
         transition={Zoom}
       />

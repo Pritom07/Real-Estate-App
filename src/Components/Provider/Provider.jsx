@@ -17,6 +17,13 @@ export const ThemeContext = createContext(null);
 const Provider = ({ children }) => {
   const [User, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [num, setNum] = useState(0);
+
+  const [afterRemoveFavArray, setAfterRemoveFavArray] = useState([]);
+  const handleAfterRemoveFavList = (func) => {
+    const FavList = func();
+    setAfterRemoveFavArray(FavList);
+  };
 
   const createAccount = (email, password) => {
     setLoading(true);
@@ -67,6 +74,10 @@ const Provider = ({ children }) => {
     return signInWithPopup(auth, GithubProvider);
   };
 
+  const calculateNum = (num) => {
+    return setNum(num);
+  };
+
   const info = {
     createAccount,
     signInAccount,
@@ -78,6 +89,10 @@ const Provider = ({ children }) => {
     googleSignin,
     githubSignin,
     loading,
+    calculateNum,
+    num,
+    handleAfterRemoveFavList,
+    afterRemoveFavArray,
   };
   return (
     <div>

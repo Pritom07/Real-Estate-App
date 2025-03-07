@@ -4,17 +4,25 @@ import { MdRealEstateAgent } from "react-icons/md";
 import { MdOutlineBrowserUpdated } from "react-icons/md";
 import { MdOutlineLogin } from "react-icons/md";
 import { CiLogout } from "react-icons/ci";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "animate.css";
 import { ThemeContext } from "../Provider/Provider";
 import { toast } from "react-toastify";
 import { FaUserCircle } from "react-icons/fa";
+import { FaCartPlus } from "react-icons/fa";
+
+import { getTotal } from "../LocalStorage/LocalStorage";
 
 const Navbar = () => {
-  const { User, signOUT } = useContext(ThemeContext);
+  const { User, signOUT, num } = useContext(ThemeContext);
   const [isOpen, setIsOpen] = useState(false);
   const [hoverOnPhoto, setHoverOnPhoto] = useState(false);
   const navigate = useNavigate();
+
+  const [totalfavourities, setTotalFavourities] = useState(getTotal());
+  useEffect(() => {
+    setTotalFavourities(getTotal());
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -36,6 +44,17 @@ const Navbar = () => {
         <li>
           <NavLink to="/updateProfile" className="text-[16px] font-semibold">
             <MdOutlineBrowserUpdated></MdOutlineBrowserUpdated> Update Profile
+          </NavLink>
+        </li>
+      )}
+      {User && (
+        <li>
+          <NavLink to="/favourities" className="text-[16px] font-semibold">
+            <FaCartPlus className="relative" />
+            <span className="text-xs text-white font-extrabold bg-violet-700 rounded-full px-1 absolute bottom-6 left-6">
+              {num != 0 ? num || totalfavourities : 0}
+            </span>
+            Favourities
           </NavLink>
         </li>
       )}

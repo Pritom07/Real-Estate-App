@@ -4,10 +4,13 @@ import Footer from "../../Components/Footer/Footer";
 import { IoIosStar } from "react-icons/io";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaCartArrowDown } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { MdGetApp } from "react-icons/md";
+import { useContext, useEffect, useState } from "react";
 import Map from "../../Components/Map/Map";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { setEstateIdToLocalstorage } from "../../Components/LocalStorage/LocalStorage";
+import { ThemeContext } from "../../Components/Provider/Provider";
 
 const EstateDetailinfo = () => {
   const data = useLoaderData();
@@ -15,8 +18,11 @@ const EstateDetailinfo = () => {
   const [sale, setSale] = useState(false);
   const navigate = useNavigate();
 
+  const { calculateNum } = useContext(ThemeContext);
+
   const desiredEstateobj = data.find((estate) => estate.id === parseInt(idx));
   const {
+    id,
     estate_title,
     segment_name,
     description,
@@ -46,6 +52,11 @@ const EstateDetailinfo = () => {
   useEffect(() => {
     AOS.init({ duration: 800, easing: "ease-in-out-sine", once: true });
   }, []);
+
+  const handleFavourities = () => {
+    const totnum = setEstateIdToLocalstorage(id);
+    calculateNum(totnum);
+  };
 
   return (
     <div className="min-h-screen flex flex-col max-w-7xl mx-auto">
@@ -122,12 +133,19 @@ const EstateDetailinfo = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center">
               <button
                 onClick={gotoAllEstates}
-                className="bg-violet-700 text-white font-semibold w-full py-3 mt-2 rounded-[6px] cursor-pointer hover:scale-x-95 duration-150"
+                className="bg-rose-700 text-white font-semibold w-full py-3 mt-2 rounded-[6px] cursor-pointer hover:scale-x-95 duration-150"
               >
                 <FaArrowLeft className="inline mr-2" /> View All Estates
               </button>
-              <button className="bg-emerald-400 text-white font-semibold w-full py-3 mt-2 rounded-[6px] ml-0 sm:ml-5 cursor-pointer hover:scale-x-95 duration-150">
-                Add to Favourities <FaCartArrowDown className="inline ml-2" />
+              <button
+                onClick={handleFavourities}
+                className="bg-emerald-400 text-white font-semibold w-full py-3 mt-2 rounded-[6px] ml-0 sm:ml-5 cursor-pointer hover:scale-x-95 duration-150"
+              >
+                Add to Favourities
+                <FaCartArrowDown className="inline ml-2 text-[18px]" />
+              </button>
+              <button className="bg-violet-700 text-white font-semibold w-full py-3 mt-2 rounded-[6px] ml-0 sm:ml-5 cursor-pointer hover:scale-x-95 duration-150">
+                Buy Estate <MdGetApp className="inline ml-2 text-xl" />
               </button>
             </div>
           </div>
