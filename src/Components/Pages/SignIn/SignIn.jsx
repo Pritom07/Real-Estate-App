@@ -15,7 +15,6 @@ const SignIn = () => {
     useContext(ThemeContext);
   const Location = useLocation();
   const navigate = useNavigate();
-  console.log(Location);
   const emailRef = useRef();
 
   const [seePass, SetseePass] = useState(false);

@@ -42,7 +42,10 @@ const Navbar = () => {
       </li>
       {User && (
         <li>
-          <NavLink to="/updateProfile" className="text-[16px] font-semibold">
+          <NavLink
+            to="/updateProfile/about"
+            className="text-[16px] font-semibold"
+          >
             <MdOutlineBrowserUpdated></MdOutlineBrowserUpdated> Update Profile
           </NavLink>
         </li>
@@ -116,10 +119,11 @@ const Navbar = () => {
         <div className="navbar-end">
           {User ? (
             <>
-              <button
+              <Link
+                to="/updateProfile/about"
                 onMouseEnter={() => setHoverOnPhoto(true)}
                 onMouseLeave={() => setHoverOnPhoto(false)}
-                className="mr-3 invisible md:visible"
+                className="mr-3 invisible md:visible hover:underline"
               >
                 {hoverOnPhoto ? (
                   <p className="font-semibold text-[16px]">
@@ -128,7 +132,7 @@ const Navbar = () => {
                 ) : (
                   <FaUserCircle className="text-4xl" />
                 )}
-              </button>
+              </Link>
               <Link
                 onClick={handlesignOut}
                 className="btn bg-violet-700 text-white font-semibold hover:scale-105"

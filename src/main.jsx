@@ -19,6 +19,8 @@ import EstateDetailinfo from "./Layouts/EstateDetailInfo/EstateDetailinfo";
 import { ToastContainer, Zoom } from "react-toastify";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import Favourities from "./Layouts/Favourities/Favourities";
+import About from "./Components/About/About";
+import EditProf from "./Components/EditProf/EditProf";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -36,8 +38,18 @@ const router = createBrowserRouter(
         ></Route>
         <Route
           path="/updateProfile"
-          element={<UpdateProfile></UpdateProfile>}
-        ></Route>
+          element={
+            <PrivateRoute>
+              <UpdateProfile></UpdateProfile>
+            </PrivateRoute>
+          }
+        >
+          <Route path="/updateProfile/about" element={<About></About>}></Route>
+          <Route
+            path="/updateProfile/editProfile"
+            element={<EditProf></EditProf>}
+          ></Route>
+        </Route>
       </Route>
       ,
       <Route path="/auth" element={<Auth></Auth>}>
@@ -57,7 +69,11 @@ const router = createBrowserRouter(
       ,
       <Route
         path="/favourities"
-        element={<Favourities></Favourities>}
+        element={
+          <PrivateRoute>
+            <Favourities></Favourities>
+          </PrivateRoute>
+        }
         loader={() => fetch("/Data/data.json")}
       ></Route>
     </>
