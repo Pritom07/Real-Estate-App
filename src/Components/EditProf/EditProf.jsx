@@ -1,45 +1,57 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { ThemeContext } from "../Provider/Provider";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 
 const EditProf = () => {
+  const navigate = useNavigate();
   const [visiblePass, SetVisiblepass] = useState(false);
+  const { updateUserProfile } = useContext(ThemeContext);
 
   useEffect(() => {
     AOS.init({ duration: 700, easing: "ease-in-out-sine", once: true });
   }, []);
 
+  const handleSeePassword = () => {
+    SetVisiblepass(!visiblePass);
+  };
+
   const handleUpdateForm = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const name = formData.get("name");
-    const PhotoUrl = formData.get("photourl");
+    const photoUrl = formData.get("photourl");
     const email = formData.get("email");
     const age = formData.get("age");
     const pass = formData.get("password");
     const city = formData.get("city");
-    const contact = formData.get("contact");
+    const phoneNumber = formData.get("contact");
     const address = formData.get("address");
     const cout = formData.get("cout");
     const profession = formData.get("profession");
-    // console.log(
-    //   name,
-    //   PhotoUrl,
-    //   email,
-    //   age,
-    //   pass,
-    //   city,
-    //   contact,
-    //   address,
-    //   cout,
-    //   profession
-    // );
-  };
 
-  const handleSeePassword = () => {
-    SetVisiblepass(!visiblePass);
+    const userData = {
+      displayName: name,
+      photoURL: photoUrl,
+      age: age,
+      city: city,
+      phoneNumber: phoneNumber,
+      address: address,
+      cout: cout,
+      profession: profession,
+    };
+
+    updateUserProfile(userData)
+      .then(() => {
+        navigate("/updateProfile/about");
+      })
+      .catch((err) => {
+        toast.error(`The error is ,"${err.message}"`);
+      });
   };
 
   return (
@@ -52,7 +64,7 @@ const EditProf = () => {
         className="flex justify-center items-center border-2 border-slate-300 rounded-[7px] mt-6"
       >
         <form onSubmit={handleUpdateForm} className="p-5 rounded-[5px] ">
-          <div className="flex flex-wrap sm:flex-nowrap gap-4">
+          <div className="flex flex-wrap sm:flex-nowrap gap-4 mt-2">
             <label className="w-full sm:w-[65%] font-semibold">
               Name :
               <input

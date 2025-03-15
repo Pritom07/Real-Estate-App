@@ -22,7 +22,7 @@ const SignUp = () => {
     e.preventDefault();
     const dataForm = new FormData(e.target);
     const name = dataForm.get("name");
-    const PhotoURL = dataForm.get("photo");
+    const PhotoUrl = dataForm.get("photo");
     const email = dataForm.get("email");
     const password = dataForm.get("password");
     const passwordRegex =
@@ -30,7 +30,7 @@ const SignUp = () => {
 
     const userData = {
       displayName: name,
-      photoURL: PhotoURL,
+      photoURL: PhotoUrl,
     };
 
     if (!passwordRegex.test(password)) {
@@ -45,7 +45,7 @@ const SignUp = () => {
         updateUserProfile(userData)
           .then(() => {})
           .catch((err) => {
-            console.log(err.message);
+            toast.error(err.message);
           });
 
         emailVerification().then(() => {
@@ -65,6 +65,7 @@ const SignUp = () => {
   useEffect(() => {
     AOS.init({ duration: 650, easing: "ease-in-out-sine", once: true });
   }, []);
+
   return (
     <div
       data-aos="zoom-in-up"
@@ -142,5 +143,4 @@ const SignUp = () => {
     </div>
   );
 };
-
 export default SignUp;

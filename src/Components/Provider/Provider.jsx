@@ -50,16 +50,17 @@ const Provider = ({ children }) => {
     };
   }, []);
 
-  const signOUT = () => {
-    return signOut(auth);
-  };
-
   const updateUserProfile = (userData) => {
     return updateProfile(auth.currentUser, userData);
   };
 
   const emailVerification = () => {
     return sendEmailVerification(auth.currentUser);
+  };
+
+  const signOUT = () => {
+    setLoading(true);
+    return signOut(auth);
   };
 
   const passwordReset = (email) => {

@@ -9,6 +9,7 @@ import { Link } from "react-router";
 
 const About = () => {
   const { User } = useContext(ThemeContext);
+  console.log(User);
 
   return (
     <div className="max-w-7xl mx-auto p-1">
@@ -60,41 +61,44 @@ const About = () => {
         <div className="flex flex-col items-center text-center lg:w-1/3">
           <FaUserTie className="text-6xl md:text-7xl" />
           <p className="mt-4 text-xl md:text-2xl font-bold">
-            {User.displayName}
+            {User?.displayName ? User.displayName : "Setting your name"}
           </p>
           <p className="text-lg md:text-xl font-semibold">
-            Profession : {User.profession ? User.profession : "Reputed Person"}
+            Profession : {User?.profession ? User.profession : "Reputed Person"}
           </p>
-          <Link
-            to="/updateProfile/editProfile"
-            className="font-semibold hover:underline"
-          >
-            <IoMicOutline className="inline text-xl font-bold" /> Add your own
-            quote
-          </Link>
+          <p className="font-semibold">
+            <IoMicOutline className="inline text-xl font-bold" />
+            {User?.cout ? (
+              User.cout
+            ) : (
+              <Link to="/updateProfile/editProfile" className="hover:underline">
+                Add your own cout
+              </Link>
+            )}
+          </p>
         </div>
 
         <div className="divider lg:divider-horizontal"></div>
 
         <div className="mt-6 lg:mt-0 lg:w-2/3">
           <h2 className="text-lg md:text-xl font-semibold">
-            <span className="font-bold">Email :</span> {User.email}
+            <span className="font-bold">Email :</span> {User?.email}
           </h2>
           <h2 className="text-lg md:text-xl font-semibold">
             <span className="font-bold mr-1">City :</span>
-            {User.city ? User.city : "Not modified"}
+            {User?.city ? User.city : "Not modified"}
           </h2>
           <h2 className="text-lg md:text-xl font-semibold">
             <span className="font-bold mr-1">Address :</span>
-            {User.address ? User.address : "Not modified"}
+            {User?.address ? User.address : "Not modified"}
           </h2>
           <h2 className="text-lg md:text-xl font-semibold">
             <span className="font-bold mr-1">Contact Info :</span>
-            {User.contact ? User.contact : "Not modified"}
+            {User?.phoneNumber ? User.contact : "Not modified"}
           </h2>
           <h2 className="text-lg md:text-xl font-semibold">
             <span className="font-bold mr-1">Age :</span>
-            {User.age ? User.age : "Not modified"}
+            {User?.age ? User.age : "Not modified"}
           </h2>
         </div>
       </div>

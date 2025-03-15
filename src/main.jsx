@@ -39,9 +39,10 @@ const router = createBrowserRouter(
         <Route
           path="/updateProfile"
           element={
-            <PrivateRoute>
-              <UpdateProfile></UpdateProfile>
-            </PrivateRoute>
+            // <PrivateRoute>
+            //   <UpdateProfile></UpdateProfile>
+            // </PrivateRoute>
+            <UpdateProfile></UpdateProfile>
           }
         >
           <Route path="/updateProfile/about" element={<About></About>}></Route>
@@ -70,9 +71,10 @@ const router = createBrowserRouter(
       <Route
         path="/favourities"
         element={
-          <PrivateRoute>
-            <Favourities></Favourities>
-          </PrivateRoute>
+          // <PrivateRoute>
+          //   <Favourities></Favourities>
+          // </PrivateRoute>
+          <Favourities></Favourities>
         }
         loader={() => fetch("/Data/data.json")}
       ></Route>
